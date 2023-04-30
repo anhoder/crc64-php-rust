@@ -15,8 +15,7 @@ cargo build --release
 cargo build && cargo test
 ```
 
-> `target/release/libcrc64.so`(or `target/release/libcrc64.dylib`) is the compiled extension. 
-> test it: `php -d extension=target/release/libcrc64.dylib -r '$crc=new Crc\\DualCrc();printf("0x%x",($crc->update("123456")->get64()));'`
+`target/release/libcrc64.so`(or `target/release/libcrc64.dylib`) is the compiled extension. 
 
 #### Use Make
 
