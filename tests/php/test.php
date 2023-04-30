@@ -19,3 +19,17 @@ function assert_eq($left, $right) {
         throw new AssertionError(sprintf("left != right,\n left: %s,\n right: %s", var_export($left, true), var_export($right, true)));
     }
 }
+
+
+// ========== benchmark ============
+
+$crc = new Crc\DualCrc();
+
+$a = str_repeat('x', 1000); // 1K
+
+$start = microtime(true);
+for ($i =0; $i < 1048576; ++$i) { // 1024x1024
+    $crc->update($a);
+}
+
+printf("0x%x %f\n", $crc->get64(), microtime(true)-$start);
