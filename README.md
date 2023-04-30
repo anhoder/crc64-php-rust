@@ -20,7 +20,12 @@ cargo build && cargo test
 #### Use Make
 
 ```sh
-phpize && ./configure && make && make install
+phpize && ./configure && make
+
+# test
+make test
+
+make install
 ```
 
 ### Usage
